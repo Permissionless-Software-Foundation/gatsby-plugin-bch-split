@@ -93,7 +93,7 @@ class Split extends React.Component {
                       <br />
                       <br />
                       This tool requires that you have BCH or SLP tokens stored
-                      to a paper wallet *before* the chain split on November
+                      to a paper wallet <b>before</b> the chain split on November
                       15th, 2020.{' '}
                       <u>
                         Instructions on how to use this tool are available at

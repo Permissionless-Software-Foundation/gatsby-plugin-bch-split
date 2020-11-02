@@ -18,6 +18,8 @@ class Split extends React.Component {
 
     _this = this
 
+    this.props = props
+
     this.state = {
       WIF: '',
       ABCAddress: '',
@@ -295,6 +297,8 @@ class Split extends React.Component {
 
   async handleSplit() {
     try {
+      console.log('this.props: ', this.props)
+
       _this.validateInputs()
 
       // Turn on spinner
@@ -326,6 +330,9 @@ class Split extends React.Component {
 
       const SplitLib = typeof window !== 'undefined' ? window.BchSplit : null
       if (!SplitLib) throw new Error('Splitting Library not found')
+
+      // Get the bch-js
+      // const BchJSWrapper = typeof window !== 'undefined' ? window.SlpWallet : null
 
       // Instancing the library
       const splitLib = new SplitLib(_this.state.WIF, WIFFromReceiver)

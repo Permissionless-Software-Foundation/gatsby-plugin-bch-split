@@ -297,7 +297,7 @@ class Split extends React.Component {
 
   async handleSplit() {
     try {
-      console.log('this.props: ', this.props)
+      console.log('_this.props: ', _this.props)
 
       _this.validateInputs()
 

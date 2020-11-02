@@ -95,11 +95,11 @@ class Split extends React.Component {
                       chains.
                     </p>
 
-                    <p>
-                      <b>Warning:</b><u>Use this tool at your own risk!</u> This is an
+                    <p><big>
+                      <b>Warning:</b> <u>Use this tool at your own risk!</u> This is an
                       automated tool. There is no tech support to help you if you
                       use it incorrectly.
-                    </p>
+                    </big></p>
 
                     <p>
                       This tool requires that you have BCH or SLP tokens stored
@@ -231,7 +231,7 @@ class Split extends React.Component {
                 >
                   <Row>
                     <Col sm={12} className="text-center">
-                      <h2>Instructions</h2>
+                      <h2><u>Instructions</u></h2>
                       <p>
                         In order to use this tool, you must have a paper wallet
                         (or private key) holding BCH or SLP tokens <b>before</b>{' '}

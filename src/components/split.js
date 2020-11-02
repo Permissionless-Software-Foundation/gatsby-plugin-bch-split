@@ -90,8 +90,15 @@ class Split extends React.Component {
                     <p>
                       Split your BCH and SLP tokens between the BCHN and ABC
                       chains.
-                      <br />
-                      <br />
+                    </p>
+
+                    <p>
+                      <b>Warning:</b><u>Use this tool at your own risk!</u> This is an
+                      automated tool. There is no tech support to help you if you
+                      use it incorrectly.
+                    </p>
+
+                    <p>
                       This tool requires that you have BCH or SLP tokens stored
                       to a paper wallet <b>before</b> the chain split on November
                       15th, 2020.{' '}

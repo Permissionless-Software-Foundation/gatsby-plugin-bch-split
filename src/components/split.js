@@ -18,7 +18,7 @@ class Split extends React.Component {
 
     _this = this
 
-    this.props = props
+    // this.props = props
 
     this.state = {
       WIF: '',
@@ -30,7 +30,8 @@ class Split extends React.Component {
       inFetch: false,
       showHelp: false,
       helpText: '',
-      helpTitle: ''
+      helpTitle: '',
+      BCHJSClass: props.bchWallet.BCHJS
     }
 
     // Object that contains data corresponding
@@ -297,7 +298,7 @@ class Split extends React.Component {
 
   async handleSplit() {
     try {
-      console.log('_this.props: ', _this.props)
+      // console.log('_this.props: ', _this.props)
 
       _this.validateInputs()
 
@@ -331,11 +332,8 @@ class Split extends React.Component {
       const SplitLib = typeof window !== 'undefined' ? window.BchSplit : null
       if (!SplitLib) throw new Error('Splitting Library not found')
 
-      // Get the bch-js
-      // const BchJSWrapper = typeof window !== 'undefined' ? window.SlpWallet : null
-
       // Instancing the library
-      const splitLib = new SplitLib(_this.state.WIF, WIFFromReceiver)
+      const splitLib = new SplitLib(_this.state.WIF, WIFFromReceiver, _this.state.BCHJSClass)
       await splitLib.getBlockchainData()
 
       // Constructing the sweep transaction

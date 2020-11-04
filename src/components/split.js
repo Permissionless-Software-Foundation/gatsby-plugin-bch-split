@@ -336,8 +336,13 @@ class Split extends React.Component {
         throw new Error('BCHJS Class not passed as a prop.')
       const BCHJSClass = _this.props.bchWallet.BCHJS
 
+      // Config object for the splitting library.
+      const splitConfig = {
+        dustServer: 'http://127.0.0.1:7654'
+      }
+
       // Instancing the library
-      const splitLib = new SplitLib(_this.state.WIF, WIFFromReceiver, BCHJSClass)
+      const splitLib = new SplitLib(_this.state.WIF, WIFFromReceiver, BCHJSClass, splitConfig)
       await splitLib.getBlockchainData()
 
       // Constructing the sweep transaction

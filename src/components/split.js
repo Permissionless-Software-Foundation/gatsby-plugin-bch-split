@@ -255,6 +255,7 @@ class Split extends React.Component {
                       />
                       </div>
 
+                      <br /><br />
                       <div className="video-background">
                       <iframe
                         width="100%"

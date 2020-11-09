@@ -255,6 +255,17 @@ class Split extends React.Component {
                       />
                       </div>
 
+                      <div className="video-background">
+                      <iframe
+                        width="100%"
+                        min-height="450px"
+                        src="https://www.youtube.com/embed/FigWfIPWXAE"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                      </div>
+
                     </Col>
                   </Row>
                 </Box>

@@ -10,7 +10,12 @@ import { getWalletInfo } from 'gatsby-ipfs-web-wallet/src/components/localWallet
 const { Text } = Inputs
 import ScannerModal from 'gatsby-ipfs-web-wallet/src/components/qr-scanner/modal'
 import './split.css'
+
 let _this
+
+const DUST_FAUCET_ABC = process.env.DUST_FAUCET_ABC
+  ? process.env.DUST_FAUCET_ABC
+  : 'http://127.0.0.1:7654'
 
 class Split extends React.Component {
   constructor(props) {
@@ -30,7 +35,7 @@ class Split extends React.Component {
       inFetch: false,
       showHelp: false,
       helpText: '',
-      helpTitle: '',
+      helpTitle: ''
       // BCHJSClass: props.bchWallet.BCHJS
     }
 
@@ -39,32 +44,39 @@ class Split extends React.Component {
     _this.HELP_TEXT = {
       WIF: {
         modalTitle: 'WIF - Private Key',
-        text: <p>
-          This input requires the WIF private key from your paper wallet. This is the
-          data encoded in the QR code of a paper wallet. It should start with the letter
-          'K' or 'L' and be 52 characters long.
-        </p>
+        text: (
+          <p>
+            This input requires the WIF private key from your paper wallet. This
+            is the data encoded in the QR code of a paper wallet. It should
+            start with the letter 'K' or 'L' and be 52 characters long.
+          </p>
+        )
       },
       BCHN: {
         modalTitle: 'BCHN Address',
-        text: <p>
-          This text box should contain the address on the BCHN chain where you'd like the
-          split funds sent.
-            </p>
+        text: (
+          <p>
+            This text box should contain the address on the BCHN chain where
+            you'd like the split funds sent.
+          </p>
+        )
       },
       ABC: {
         modalTitle: 'ABC Address',
-        text: <div>
-          <p>
-            This text box should contain the address on the ABC chain where you'd like the
-            split funds sent.
-          </p>
-          <p>
-            This web wallet automatically follows the ABC chain. This text box is auto-populated
-            with the address of this wallet. If you want to send the funds to a different
-            address, replace it with the address of your desire.
-          </p>
-        </div>
+        text: (
+          <div>
+            <p>
+              This text box should contain the address on the ABC chain where
+              you'd like the split funds sent.
+            </p>
+            <p>
+              This web wallet automatically follows the ABC chain. This text box
+              is auto-populated with the address of this wallet. If you want to
+              send the funds to a different address, replace it with the address
+              of your desire.
+            </p>
+          </div>
+        )
       }
     }
   }
@@ -95,16 +107,18 @@ class Split extends React.Component {
                       chains.
                     </p>
 
-                    <p><big>
-                      <b>Warning:</b> <u>Use this tool at your own risk!</u> This is an
-                      automated tool. There is no tech support to help you if you
-                      use it incorrectly.
-                    </big></p>
+                    <p>
+                      <big>
+                        <b>Warning:</b> <u>Use this tool at your own risk!</u>{' '}
+                        This is an automated tool. There is no tech support to
+                        help you if you use it incorrectly.
+                      </big>
+                    </p>
 
                     <p>
                       This tool requires that you have BCH or SLP tokens stored
-                      to a paper wallet <b>before</b> the chain split on November
-                      15th, 2020.{' '}
+                      to a paper wallet <b>before</b> the chain split on
+                      November 15th, 2020.{' '}
                       <u>
                         Instructions on how to use this tool are available at
                         the bottom of the screen.
@@ -194,7 +208,7 @@ class Split extends React.Component {
                         rel="noopener noreferrer"
                         href={`https://explorer.bitcoin.com/bch/tx/${
                           _this.state.txId
-                          }`}
+                        }`}
                       >
                         Transaction ID: {_this.state.txId}
                       </a>
@@ -231,7 +245,9 @@ class Split extends React.Component {
                 >
                   <Row>
                     <Col sm={12} className="text-center">
-                      <h2><u>Instructions</u></h2>
+                      <h2>
+                        <u>Instructions</u>
+                      </h2>
                       <p>
                         In order to use this tool, you must have a paper wallet
                         (or private key) holding BCH or SLP tokens <b>before</b>{' '}
@@ -245,28 +261,28 @@ class Split extends React.Component {
                         how to retrieve funds from them.
                       </p>
                       <div className="video-background">
-                      <iframe
-                        width="100%"
-                        min-height="450px"
-                        src="https://www.youtube.com/embed/e1JxSirCiXM"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
+                        <iframe
+                          width="100%"
+                          min-height="450px"
+                          src="https://www.youtube.com/embed/e1JxSirCiXM"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
                       </div>
 
-                      <br /><br />
+                      <br />
+                      <br />
                       <div className="video-background">
-                      <iframe
-                        width="100%"
-                        min-height="450px"
-                        src="https://www.youtube.com/embed/FigWfIPWXAE"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
+                        <iframe
+                          width="100%"
+                          min-height="450px"
+                          src="https://www.youtube.com/embed/FigWfIPWXAE"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
                       </div>
-
                     </Col>
                   </Row>
                 </Box>
@@ -344,7 +360,7 @@ class Split extends React.Component {
       const SplitLib = typeof window !== 'undefined' ? window.BchSplit : null
       if (!SplitLib) throw new Error('Splitting Library not found')
 
-      if(!_this.props.bchWallet)
+      if (!_this.props.bchWallet)
         throw new Error('BCHJS Class not passed as a prop.')
       const BCHJSClass = _this.props.bchWallet.BCHJS
 
@@ -354,7 +370,12 @@ class Split extends React.Component {
       }
 
       // Instancing the library
-      const splitLib = new SplitLib(_this.state.WIF, WIFFromReceiver, BCHJSClass, splitConfig)
+      const splitLib = new SplitLib(
+        _this.state.WIF,
+        WIFFromReceiver,
+        BCHJSClass,
+        splitConfig
+      )
       await splitLib.getBlockchainData()
 
       // Constructing the sweep transaction
@@ -479,7 +500,9 @@ class Split extends React.Component {
       // Validate Input
       const isAddress = _this.validateAddress(data)
       if (!isAddress) {
-        throw new Error('BCHN Address must be a BCH or SLP Address, containing a bitcoincash: or simpleledger: prefix.')
+        throw new Error(
+          'BCHN Address must be a BCH or SLP Address, containing a bitcoincash: or simpleledger: prefix.'
+        )
       }
       _this.setState({
         BCHNAddress: data,
@@ -499,7 +522,9 @@ class Split extends React.Component {
       // Validate Input
       const isAddress = _this.validateAddress(data)
       if (!isAddress) {
-        throw new Error('ABC Address must be a BCH or SLP Address, containing a bitcoincash: or simpleledger: prefix.')
+        throw new Error(
+          'ABC Address must be a BCH or SLP Address, containing a bitcoincash: or simpleledger: prefix.'
+        )
       }
       _this.setState({
         ABCAddress: data,

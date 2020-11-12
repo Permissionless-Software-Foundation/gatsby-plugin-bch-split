@@ -479,7 +479,7 @@ class Split extends React.Component {
       // Validate Input
       const isAddress = _this.validateAddress(data)
       if (!isAddress) {
-        throw new Error('BCHN Address must be a BCH or SLP Address')
+        throw new Error('BCHN Address must be a BCH or SLP Address, containing a bitcoincash: or simpleledger: prefix.')
       }
       _this.setState({
         BCHNAddress: data,
@@ -499,7 +499,7 @@ class Split extends React.Component {
       // Validate Input
       const isAddress = _this.validateAddress(data)
       if (!isAddress) {
-        throw new Error('ABC Address must be a BCH or SLP Address')
+        throw new Error('ABC Address must be a BCH or SLP Address, containing a bitcoincash: or simpleledger: prefix.')
       }
       _this.setState({
         ABCAddress: data,

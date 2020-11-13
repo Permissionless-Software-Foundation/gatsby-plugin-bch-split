@@ -59,15 +59,6 @@ class Split extends React.Component {
           </p>
         )
       },
-      BCHN: {
-        modalTitle: 'BCHN Address',
-        text: (
-          <p>
-            This text box should contain the address on the BCHN chain where
-            you'd like the split funds sent.
-          </p>
-        )
-      },
       ABC: {
         modalTitle: 'ABC Address',
         text: (
@@ -173,27 +164,6 @@ class Split extends React.Component {
                           <Button
                             icon="fa-question"
                             onClick={() => _this.handleHelpModal('ABC')}
-                          />
-                        }
-                      />
-                      <Text
-                        id="BCHNAddress"
-                        name="BCHNAddress"
-                        placeholder="Enter BCHN Address"
-                        label="BCHN Address"
-                        labelPosition="above"
-                        value={_this.state.BCHNAddress}
-                        onChange={_this.handleUpdate}
-                        buttonRight={
-                          <Button
-                            icon="fa-qrcode"
-                            onClick={() => _this.handleModal('BCHNAddress')}
-                          />
-                        }
-                        buttonLeft={
-                          <Button
-                            icon="fa-question"
-                            onClick={() => _this.handleHelpModal('BCHN')}
                           />
                         }
                       />
@@ -326,7 +296,8 @@ class Split extends React.Component {
     const { mnemonic, cashAddress } = walletInfo
     if (mnemonic && cashAddress) {
       _this.setState({
-        ABCAddress: cashAddress
+        // ABCAddress: cashAddress
+        BCHNAddress: cashAddress
       })
     }
   }

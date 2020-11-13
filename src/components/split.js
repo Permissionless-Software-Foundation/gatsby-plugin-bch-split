@@ -411,7 +411,7 @@ class Split extends React.Component {
       throw new Error('ABC Address is required')
     }
     if (!BCHNAddress) {
-      throw new Error('BCHN Address is required')
+      throw new Error('BCHN Address is required. Click on the Wallet menu item and create a wallet first.')
     }
 
     const isWIF = _this.validateWIF(WIF)

@@ -17,11 +17,18 @@ const DUST_FAUCET_ABC = process.env.DUST_FAUCET_ABC
   ? process.env.DUST_FAUCET_ABC
   : 'http://127.0.0.1:7654'
 
+const DUST_FAUCET_BCHN = process.env.DUST_FAUCET_BCHN
+  ? process.env.DUST_FAUCET_BCHN
+  : 'http://127.0.0.1:8765'
+
 class Split extends React.Component {
   constructor(props) {
     super(props)
 
     _this = this
+
+    console.log(`ABC Dust Faucet: ${DUST_FAUCET_ABC}`)
+    console.log(`BCHN Dust Faucet: ${DUST_FAUCET_BCHN}`)
 
     this.props = props
 
@@ -366,7 +373,8 @@ class Split extends React.Component {
 
       // Config object for the splitting library.
       const splitConfig = {
-        dustServer: 'http://127.0.0.1:7654'
+        dustServerAbc: DUST_FAUCET_ABC,
+        dustServerBchn: DUST_FAUCET_BCHN
       }
 
       // Instancing the library

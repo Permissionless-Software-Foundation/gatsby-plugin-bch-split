@@ -196,18 +196,19 @@ class Split extends React.Component {
                       <a
                         target="_blank"
                         rel="noopener noreferrer"
-                        href={`https://explorer.bitcoin.com/bch/tx/${
+                        href={`https://explorer.bitcoincash.org/tx/${
                           _this.state.txidAbc
                         }`}
                       >
-                        BCHN Transaction ID: {_this.state.txidAbc}
+                        ABC Transaction ID: {_this.state.txidAbc}
                       </a>
                     )}
+                    <br /><br />
                     {_this.state.txidBchn && (
                       <a
                         target="_blank"
                         rel="noopener noreferrer"
-                        href={`https://explorer.bitcoincash.org/address/${
+                        href={`https://explorer.bitcoin.com/bch/tx/${
                           _this.state.txidBchn
                         }`}
                       >

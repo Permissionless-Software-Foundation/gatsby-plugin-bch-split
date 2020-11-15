@@ -90,7 +90,7 @@ class Split extends React.Component {
                 loaded={!_this.state.inFetch}
                 className="hover-shadow border-none mt-2"
               >
-                <Row>
+                <Row style={{visibility: 'hidden'}}>
                   <Col sm={12} className="text-center">
                     <h1>
                       <FontAwesomeIcon

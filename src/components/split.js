@@ -95,6 +95,10 @@ class Split extends React.Component {
                     <h3>
                       This tool will be enabled after the BCH chain split.
                     </h3>
+                    <h3>
+                      Please watch the videos below to learn how to use the tool
+                      when it comes back online.
+                    </h3>
                   </Col>
                 </Row>
 

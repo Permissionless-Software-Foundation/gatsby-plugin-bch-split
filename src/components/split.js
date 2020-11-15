@@ -90,7 +90,7 @@ class Split extends React.Component {
                 loaded={!_this.state.inFetch}
                 className="hover-shadow border-none mt-2"
               >
-                <Row style={{visibility: 'show'}}>
+                <Row style={{visibility: 'hidden'}}>
                   <Col sm={12} className="text-center">
                     <h3>
                       This tool will be enabled after the BCH chain split.
@@ -102,7 +102,7 @@ class Split extends React.Component {
                   </Col>
                 </Row>
 
-                <Row style={{visibility: 'hidden'}}>
+                <Row style={{visibility: 'show'}}>
                   <Col sm={12} className="text-center">
                     <h1>
                       <FontAwesomeIcon

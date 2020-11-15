@@ -266,7 +266,7 @@ class Split extends React.Component {
                         <iframe
                           width="100%"
                           min-height="450px"
-                          src="https://www.youtube.com/embed/FigWfIPWXAE"
+                          src="https://www.youtube.com/embed/-iWj7tR_MrM"
                           frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen

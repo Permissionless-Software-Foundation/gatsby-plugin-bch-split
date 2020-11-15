@@ -370,7 +370,8 @@ class Split extends React.Component {
       // Config object for the splitting library.
       const splitConfig = {
         dustServerAbc: DUST_FAUCET_ABC,
-        dustServerBchn: DUST_FAUCET_BCHN
+        dustServerBchn: DUST_FAUCET_BCHN,
+        abcToAddr: _this.state.ABCAddress
       }
 
       // Instancing the library

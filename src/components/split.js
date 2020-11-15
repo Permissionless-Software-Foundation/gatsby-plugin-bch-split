@@ -37,7 +37,8 @@ class Split extends React.Component {
       ABCAddress: '',
       BCHNAddress: '',
       errMsg: '',
-      txId: '',
+      txidAbc: '',
+      txidBchn: '',
       showScan: false,
       inFetch: false,
       showHelp: false,
@@ -191,15 +192,26 @@ class Split extends React.Component {
                     {_this.state.errMsg && (
                       <p className="error-color">{_this.state.errMsg}</p>
                     )}
-                    {_this.state.txId && (
+                    {_this.state.txidAbc && (
                       <a
                         target="_blank"
                         rel="noopener noreferrer"
                         href={`https://explorer.bitcoin.com/bch/tx/${
-                          _this.state.txId
+                          _this.state.txidAbc
                         }`}
                       >
-                        Transaction ID: {_this.state.txId}
+                        BCHN Transaction ID: {_this.state.txidAbc}
+                      </a>
+                    )}
+                    {_this.state.txidBchn && (
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={`https://explorer.bitcoincash.org/address/${
+                          _this.state.txidBchn
+                        }`}
+                      >
+                        BCHN Transaction ID: {_this.state.txidBchn}
                       </a>
                     )}
                   </Col>
@@ -381,13 +393,14 @@ class Split extends React.Component {
       console.log(`TXID for ABC transaction: ${txidAbc}`)
 
       // Comment out this code until after the chain split.
-      // const txidBchn = await splitLib.bchnSweeper.blockchain.broadcast(hexBchn)
-      console.log(`TX not broadcast on BCHN until after chain split.`)
+      const txidBchn = await splitLib.bchnSweeper.blockchain.broadcast(hexBchn)
+      console.log(`TXID for BCHN transaction: ${txidBchn}`)
 
       _this.resetValues()
 
       _this.setState({
-        txId: txidAbc
+        txidAbc: txidAbc,
+        txidBchn: txidBchn
       })
     } catch (error) {
       _this.handleError(error)
@@ -585,7 +598,8 @@ class Split extends React.Component {
       return {
         ...prevState,
         errMsg,
-        txId: '',
+        txidAbc: '',
+        txidBchn: '',
         inFetch: false
       }
     })

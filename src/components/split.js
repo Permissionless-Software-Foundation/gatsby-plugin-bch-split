@@ -419,7 +419,7 @@ class Split extends React.Component {
   // Reset form and component state
   resetValues() {
     _this.setState({
-      BCHNAddress: '',
+      // BCHNAddress: '',
       ABCAddress: '',
       WIF: '',
       errMsg: '',

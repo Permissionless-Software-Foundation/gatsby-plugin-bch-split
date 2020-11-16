@@ -129,13 +129,13 @@ class Split extends React.Component {
                     <p>
                       This tool requires that you have BCH or SLP tokens stored
                       to a paper wallet, or otherwise have the WIF private key for the address.
-                      <u>
+                      {' '}<u>
                         Instructions on how to use this tool are available at
-                        the bottom of the screen.
+                        the bottom of this page.
                       </u>
                     </p>
                     <p>
-                      This tool is not free. It charges 0.0004 (about $0.10) or
+                      This tool is not free. It charges 0.0004 BCH (about $0.10 USD) or
                       1% of the BCH on the paper wallet, whichever is greater.
                     </p>
                     <Box className="border-none">
@@ -255,10 +255,9 @@ class Split extends React.Component {
                       </h2>
                       <p>
                         In order to use this tool, you must have a paper wallet
-                        (or private key) holding BCH or SLP tokens <b>before</b>{' '}
-                        the chain split on November 15th, 2020. This tool will
-                        help you split your BCH and SLP tokens <b>after</b> the
-                        chain split happens.
+                        (or private key) holding BCH or SLP tokens. This tool will
+                        help you split your BCH and SLP tokens between the BCHN
+                        and ABC chains.
                       </p>
                       <p>
                         This video explains how to work with paper wallets. It

@@ -91,10 +91,12 @@ class Split extends React.Component {
                 loaded={!_this.state.inFetch}
                 className="hover-shadow border-none mt-2"
               >
-                <Row style={{visibility: 'hidden'}}>
+                <Row style={{visibility: 'show'}}>
                   <Col sm={12} className="text-center">
                     <h3>
-                      This tool will be enabled after the BCH chain split.
+                      The BCHA network is currently experiencing a DoS attack
+                      that is preenting transactions from being confirmed. This
+                      tool will be enabled after the attack has stopped.
                     </h3>
                     <h3>
                       Please watch the videos below to learn how to use the tool
@@ -103,7 +105,7 @@ class Split extends React.Component {
                   </Col>
                 </Row>
 
-                <Row style={{visibility: 'show'}}>
+                <Row style={{visibility: 'hidden'}}>
                   <Col sm={12} className="text-center">
                     <h1>
                       <FontAwesomeIcon

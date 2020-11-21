@@ -95,7 +95,7 @@ class Split extends React.Component {
                   <Col sm={12} className="text-center">
                     <h3>
                       The BCHA network is currently experiencing a DoS attack
-                      that is preenting transactions from being confirmed. This
+                      that is preventing transactions from being confirmed. This
                       tool will be enabled after the attack has stopped.
                     </h3>
                     <h3>

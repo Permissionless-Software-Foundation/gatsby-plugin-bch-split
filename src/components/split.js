@@ -91,7 +91,7 @@ class Split extends React.Component {
                 loaded={!_this.state.inFetch}
                 className="hover-shadow border-none mt-2"
               >
-                <Row style={{visibility: 'show'}}>
+                <Row style={{visibility: 'hidden'}}>
                   <Col sm={12} className="text-center">
                     <h3>
                       The BCHA network is currently experiencing a DoS attack
@@ -105,7 +105,7 @@ class Split extends React.Component {
                   </Col>
                 </Row>
 
-                <Row style={{visibility: 'hidden'}}>
+                <Row style={{visibility: 'show'}}>
                   <Col sm={12} className="text-center">
                     <h1>
                       <FontAwesomeIcon

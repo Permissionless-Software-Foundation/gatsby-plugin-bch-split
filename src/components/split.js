@@ -189,7 +189,7 @@ class Split extends React.Component {
                       <a
                         target="_blank"
                         rel="noopener noreferrer"
-                        href={`https://explorer.bitcoincash.org/tx/${
+                        href={`https://explorer.bitcoinabc.org/tx/${
                           _this.state.txidAbc
                         }`}
                       >
